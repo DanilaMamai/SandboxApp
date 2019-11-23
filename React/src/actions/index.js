@@ -18,7 +18,6 @@ const setUser = user => ({
 
 const logInWithToken = () => dispatch => {
     const token = localStorage.token;
-    console.log(token);
     if (token) {
         api.onLoginToken(token)
             .then(res => {

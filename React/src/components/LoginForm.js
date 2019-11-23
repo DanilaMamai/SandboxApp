@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, FormGroup, Button } from 'react-bootstrap';
-import { api } from '../tools/api';
+import { api, client } from '../tools/api';
 import { connect } from 'react-redux';
 import { setUser, setLoading } from '../actions';
 import PropTypes from 'prop-types';
@@ -17,6 +17,7 @@ export const Layer = (props) => {
             .then((res) => {
                 setError('');
                 localStorage.setItem("token", res.data)
+                client.defaults.headers.common = { 'Authorization': `Bearer ${res.data}` };
                 props.setUser({ email, password });
             })
             .catch(error => {

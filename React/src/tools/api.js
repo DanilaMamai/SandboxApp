@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const client = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'http://188.225.74.18/',
 });
 
 const token = localStorage.token;
