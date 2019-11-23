@@ -1,0 +1,104 @@
+* {
+  font-family: "Calibri";
+}
+
+html,
+body {
+  height: 100%;
+  background: #fbfdff;
+
+  #root {
+    height: 100%;
+  }
+}
+
+.header {
+  height: 100px;
+  padding: 0 20px;
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.home {
+  font-weight: bold;
+}
+
+.sidebar {
+  margin-top: 40px;
+  min-width: 260px;
+
+  .menu {
+    padding: 0px;
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+      li {
+        a {
+          transition: 0.5s;
+          padding: 5px 20px;
+          display: block;
+          text-decoration: none;
+          color: #b5b5b5;
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        a:hover {
+          background: #4a4a4a;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  border-left: 3px solid #17a2b8;
+}
+
+.headline {
+  padding: 10px 15px;
+  background: #17a2b8;
+  font-weight: bold;
+  color: white;
+  margin: 20px 0 0 30%;
+  width: 100%;
+}
+
+.intro-text {
+  margin-top: 10%;
+  margin-right: 60%;
+  background: brown;
+  padding: 10px 15px;
+  color: white;  
+
+  h2 {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: right;
+    margin: 0;
+  }
+}
+
+.login {
+  padding: 10px;
+  input {
+    margin: 0;
+  }
+  form {
+    width: 250px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  span {
+    color: #b72222;
+    font-size: 14px;
+  }
+}
