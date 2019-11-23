@@ -1,5 +1,5 @@
 import { ACTIONS } from './actions-type';
-import { api } from '../tools/api';
+import { api, client } from '../tools/api';
 
 const setLoading = loading => ({
     type: ACTIONS.SET_LOADING,
@@ -18,9 +18,13 @@ const setUser = user => ({
 
 const logInWithToken = () => dispatch => {
     const token = localStorage.token;
+    console.log(token);
     if (token) {
         api.onLoginToken(token)
-            .then(res => dispatch(setUser(res.data)))
+            .then(res => {
+                dispatch(setUser(res.data));
+                client.defaults.headers.common = { 'Authorization': `Bearer ${token}` };
+            })
             .catch(error => {
                 console.log(error);
                 localStorage.removeItem("token");

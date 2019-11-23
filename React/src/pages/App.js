@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
 import '../styles/app.scss';
-import { Books } from './Books';
+import { Posts } from './Posts';
 import { Home } from './Home';
 import { LoginForm } from '../components/LoginForm';
 import { Menu } from '../components/Menu';
@@ -27,7 +27,7 @@ class App extends React.Component {
 
     render() {
 
-        const token = localStorage.token;
+        const token = localStorage.token;        
 
         return (
             <Sidebar
@@ -45,7 +45,7 @@ class App extends React.Component {
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route path="/login" component={Login} />
-                            <PrivateRoute path="/books" component={Books} />
+                            <PrivateRoute path="/books" component={Posts} />
                         </Switch>
                     </Col>
                 </Row>

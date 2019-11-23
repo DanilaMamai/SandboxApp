@@ -1,24 +1,32 @@
 import axios from 'axios';
 
-export const params = {
-    url: 'http://188.225.74.18/'
+export const client = axios.create({
+    baseURL: 'http://localhost:5000/',
+});
+
+const token = localStorage.token;
+if (token) {
+    client.defaults.headers.common = { 'Authorization': `Bearer ${token}` }
 }
 
 export const api = {
     onLogin: (email, password) => {
-        return axios.post(params.url.concat('api/Authentication'), {
+        return client.post('api/Authentication', {
             email,
             password
         })
     },
     onLoginToken: token => {
-        return axios.get(params.url.concat('api/Authentication'), {
+        return client.get('api/Authentication', {
             params: {
                 token
             }
         })
     },
     getBooks: () => {
-        return axios.get(params.url.concat('api/Books'))
+        return client.get('api/Books')
+    },
+    getPosts: () => {
+        return client.get('api/Posts')
     }
 }

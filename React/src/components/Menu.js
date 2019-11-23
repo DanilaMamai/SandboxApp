@@ -16,7 +16,7 @@ const Layer = (props) => {
                     <NavLink activeClassName="active" exact to="/">На главную</NavLink>
                 </li>
                 <li>
-                    <NavLink activeClassName="active" to="/books">Книги</NavLink>
+                    <NavLink activeClassName="active" to="/books">База знаний</NavLink>
                 </li>
                 <li>
                     <Link to="/" onClick={() => props.logOut()}>Выйти</Link>
